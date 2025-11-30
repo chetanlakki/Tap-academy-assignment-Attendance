@@ -1,106 +1,248 @@
-1)# Employee Attendance System
+Employee Attendance System — MERN Stack
 
-Simple attendance app for Employees and Managers — built with React (client), Node + Express (server) and MongoDB.
+A simple and clean attendance-tracking system built for employees and managers. Employees can mark their daily attendance, while managers can view team statistics, filter records, and export attendance reports.
 
-This repo contains:
-- `server/` — Express API (auth, attendance, manager endpoints, CSV export, seed script)
-- `client/` — React frontend (Login/Register, Employee dashboard, Manager dashboard)
+This project was built in a few hours as part of a technical assignment, keeping the codebase minimal, readable, and easy to extend.
 
----
+🚀 Live Demo
 
-## Quick TL;DR (for the impatient)
-1. Start MongoDB (Atlas preferred).  
-2. Configure `server/.env` from `.env.example`.  
-3. `cd server && npm install && npm run dev`  
-4. `cd client && npm install && npm start`  
-5. Open `http://localhost:3000`. Use seeded manager credentials printed by the seed script.
+Frontend: https://your-frontend-url-here
 
----
+Backend API: https://your-backend-url-here
 
-## Local setup — step by step
+(Replace these two links with your Render deployment URLs)
 
-### Prerequisites
-- Node.js 16+ and npm
-- MongoDB Atlas (recommended) or local MongoDB
-- Git and a GitHub account
+📌 Features
+Employee
 
-### 1 Clone repo
-```bash
-git clone <your-repo-url>
+Register / Login
+
+Mark Check-In and Check-Out
+
+View monthly summary:
+
+Present
+
+Absent
+
+Late
+
+Total hours worked
+
+Attendance history
+
+Dashboard with a quick overview chart + last 7 days summary
+
+Manager
+
+Login
+
+View all employee attendance
+
+Filter by date, employee, or status
+
+Team summary panel
+
+Export to CSV
+
+Dashboard with:
+
+Total Employees
+
+Today's Present / Absent
+
+Department-wise attendance
+
+Weekly attendance trend
+
+🧱 Tech Stack
+Frontend
+
+React (CRA)
+
+Zustand (state management)
+
+Recharts (dashboard charts)
+
+Custom CSS (no UI frameworks used)
+
+Backend
+
+Node.js + Express
+
+JWT authentication
+
+MongoDB Atlas + Mongoose
+
+CSV export
+
+📁 Project Structure
+attendance-project/
+│
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── pages/          # Login, Dashboard, Manager views, etc.
+│   │   ├── components/
+│   │   ├── store.js        # Zustand state manager
+│   │   ├── App.js
+│   │   └── styles.css
+│   └── package.json
+│
+├── server/                 # Backend API
+│   ├── models/             # Mongoose schemas
+│   │   ├── User.js
+│   │   └── Attendance.js
+│   ├── routes/             # Auth + Attendance routes
+│   │   ├── auth.js
+│   │   └── attendance.js
+│   ├── seed.js             # Adds sample employees + attendance
+│   ├── server.js           # Main API
+│   └── package.json
+│
+├── .env.example            # Example environment file
+└── README.md               # Project documentation
+
+🔧 Setup Instructions
+1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
 cd attendance-project
 
-2) Backend setup
+2. Backend Setup
 cd server
 npm install
 
 
-Create server/.env using server/.env.example (copy paste and fill values):
+Create .env file inside server/:
 
 PORT=5000
-MONGODB_URI=mongodb+srv://<db_user>:<db_password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority
-JWT_SECRET=replace-with-a-long-secret
+MONGODB_URI=your_mongo_atlas_uri
+JWT_SECRET=your_secret_key
 
 
-Seed the DB (creates manager + sample employees + attendance):
-
-node seed.js
-# note printed manager credentials (email / password)
-
-
-Start backend server (dev):
+Run backend:
 
 npm run dev
-# expected: "MongoDB connected" and "Server running at port 5000"
 
-3) Frontend setup
 
-Open a new terminal:
+Seed sample users & attendance:
 
+npm run seed
+
+3. Frontend Setup
 cd client
 npm install
-# set server base (dev uses http://localhost:5000 by default)
 npm start
 
 
-Open http://localhost:3000.
+Create .env inside client/:
 
-How to run (summary)
+REACT_APP_SERVER=http://localhost:5000
 
-Backend: cd server && npm run dev
+🌐 Deployment Notes
+Frontend (Render Static Site)
 
-Frontend: cd client && npm start
+Build command:
 
-Seed: cd server && node seed.js
+npm run build
 
-Environment variables
 
-server/.env (example)
+Publish directory:
+
+build
+
+Backend (Render Web Service)
+
+Environment:
 
 PORT=5000
-MONGODB_URI=<your-mongodb-uri>
-JWT_SECRET=<a-random-secret>
+MONGODB_URI=your atlas uri
+JWT_SECRET=your secret
 
 
-client:
+Start command:
 
-REACT_APP_SERVER (only needed if frontend should point to deployed backend; dev defaults to http://localhost:5000)
+node server.js
 
-Seed data (what it creates)
+👥 Sample Credentials (Seed Data)
+Manager
+Email: geetha.lakkireddy@example.com
+Password: Password123
 
-The seed script creates:
+Employees
+bhargav.kamati@example.com / Password123
+praneetha.k@example.com / Password123
+chetan.lakkireddy@example.com / Password123
 
-1 manager (email printed in console)
+📸 Screenshots (Add these manually)
 
-3 employees (with employeeId)
+You should upload screenshots of:
 
-Several attendance entries across recent dates so manager views show data and CSV exports work.
+Login Page
 
-Run node seed.js from server/ to apply.
+Employee Dashboard
 
-Troubleshooting tips
+Manager Dashboard
 
-CORS issues: ensure server uses cors() or accepts your frontend origin.
+All Attendance Table
 
-JWT errors: check JWT_SECRET consistency if you re-seed.
+Attendance History Calendar
 
-Mongo connection: verify Atlas user + IP access list.
+CSV Export
+
+Example section format:
+
+### Login Page
+![Login](./screenshots/login.png)
+
+### Employee Dashboard
+![Dashboard](./screenshots/employee-dashboard.png)
+
+
+Create a screenshots/ folder in your repo and add images.
+
+🧪 API Endpoints
+Auth
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/auth/me
+
+Employee Attendance
+
+POST /api/attendance/checkin
+
+POST /api/attendance/checkout
+
+GET /api/attendance/my-history
+
+GET /api/attendance/my-summary
+
+Manager
+
+GET /api/attendance/all
+
+GET /api/attendance/export
+
+✨ What This Project Demonstrates
+
+Clean backend architecture
+
+JWT authentication
+
+Zustand global state
+
+Reusable UI pattern
+
+Simple but effective attendance logic
+
+CSV export generation
+
+Render deployment workflow
+
+This is a lightweight but complete prototype that can be extended into a real HR attendance system.
+
+📜 License
+
+This project is for educational and evaluation purposes.
