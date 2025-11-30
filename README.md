@@ -1,122 +1,110 @@
-Employee Attendance System — MERN Stack
+Developer Portfolio Style (rich layout, emojis, clean boxes, headings, looks premium)
 
-A simple and clean attendance-tracking system built for employees and managers. Employees can mark their daily attendance, while managers can view team statistics, filter records, and export attendance reports.
+👉 This one looks GREAT on GitHub.
 
-This project was built in a few hours as part of a technical assignment, keeping the codebase minimal, readable, and easy to extend.
+🚀 Employee Attendance System
+A clean, fast, fully functional MERN attendance tracker for employees & managers
+<p align="center"> <img src="https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge" /> <img src="https://img.shields.io/badge/React-Zustand-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Node.js-Express-lightgrey?style=for-the-badge" /> <img src="https://img.shields.io/badge/MongoDB-Atlas-success?style=for-the-badge" /> </p>
+📌 Overview
 
-🚀 Live Demo
+This project is a minimal, production-ready MERN Attendance System with two roles:
 
-Frontend: https://your-frontend-url-here
+Employee → Check in, check out, view history, track monthly stats
 
-Backend API: https://your-backend-url-here
+Manager → View all employee attendance, filter, export CSV, analyze team data
 
-(Replace these two links with your Render deployment URLs)
+I focused heavily on clean code, predictable architecture, and a smooth user flow, keeping the UI simple but professional.
 
-📌 Features
-Employee
+⭐ Live Demo
 
-Register / Login
+Frontend → https://your-frontend-url
 
-Mark Check-In and Check-Out
+Backend API → https://your-backend-url
 
-View monthly summary:
+🧠 Core Features
+👨‍💼 Employee
 
-Present
+Login / Register
 
-Absent
+Mark attendance (Check-In / Check-Out)
 
-Late
+Monthly summary (Present, Absent, Late, Total Hours)
 
-Total hours worked
+History table
 
-Attendance history
+Dashboard charts
 
-Dashboard with a quick overview chart + last 7 days summary
+Real-time check-in status
 
-Manager
+🧑‍🔧 Manager
 
 Login
 
-View all employee attendance
+View all employees
 
-Filter by date, employee, or status
+Filter by date, status, employee
 
 Team summary panel
 
-Export to CSV
+CSV Export
 
-Dashboard with:
+Attendance trends + department stats
 
-Total Employees
-
-Today's Present / Absent
-
-Department-wise attendance
-
-Weekly attendance trend
-
-🧱 Tech Stack
+🏗 Tech Stack
 Frontend
 
-React (CRA)
+React
 
 Zustand (state management)
 
-Recharts (dashboard charts)
+Recharts (graphs)
 
-Custom CSS (no UI frameworks used)
+Custom CSS
 
 Backend
 
 Node.js + Express
 
-JWT authentication
+JWT Authentication
 
-MongoDB Atlas + Mongoose
+MongoDB Atlas
 
-CSV export
+Mongoose
+
+CSV generator
 
 📁 Project Structure
 attendance-project/
 │
-├── client/                 # React frontend
+├── client/
 │   ├── src/
-│   │   ├── pages/          # Login, Dashboard, Manager views, etc.
+│   │   ├── pages/
 │   │   ├── components/
-│   │   ├── store.js        # Zustand state manager
+│   │   ├── store.js
 │   │   ├── App.js
 │   │   └── styles.css
 │   └── package.json
 │
-├── server/                 # Backend API
-│   ├── models/             # Mongoose schemas
-│   │   ├── User.js
-│   │   └── Attendance.js
-│   ├── routes/             # Auth + Attendance routes
-│   │   ├── auth.js
-│   │   └── attendance.js
-│   ├── seed.js             # Adds sample employees + attendance
-│   ├── server.js           # Main API
+├── server/
+│   ├── models/
+│   ├── routes/
+│   ├── seed.js
+│   ├── server.js
 │   └── package.json
 │
-├── .env.example            # Example environment file
-└── README.md               # Project documentation
+└── README.md
 
-🔧 Setup Instructions
-1. Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-cd attendance-project
-
-2. Backend Setup
+⚙️ Setup Instructions
+🟦 Backend Setup
 cd server
 npm install
 
 
-Create .env file inside server/:
+Create .env:
 
 PORT=5000
-MONGODB_URI=your_mongo_atlas_uri
-JWT_SECRET=your_secret_key
+MONGODB_URI=your_mongo_uri
+JWT_SECRET=your_secret
 
 
 Run backend:
@@ -124,24 +112,24 @@ Run backend:
 npm run dev
 
 
-Seed sample users & attendance:
+Seed sample users:
 
 npm run seed
 
-3. Frontend Setup
+🟩 Frontend Setup
 cd client
 npm install
 npm start
 
 
-Create .env inside client/:
+Add .env:
 
 REACT_APP_SERVER=http://localhost:5000
 
-🌐 Deployment Notes
+🌐 Deployment
 Frontend (Render Static Site)
 
-Build command:
+Build:
 
 npm run build
 
@@ -152,97 +140,63 @@ build
 
 Backend (Render Web Service)
 
-Environment:
-
-PORT=5000
-MONGODB_URI=your atlas uri
-JWT_SECRET=your secret
-
-
 Start command:
 
 node server.js
 
-👥 Sample Credentials (Seed Data)
+🧪 API Endpoints (Technical Summary)
+Auth
+
+POST /api/auth/register
+POST /api/auth/login
+GET /api/auth/me
+
+Attendance
+
+Employees:
+
+POST /api/attendance/checkin
+POST /api/attendance/checkout
+GET /api/attendance/my-history
+GET /api/attendance/my-summary
+
+
+Manager:
+
+GET /api/attendance/all
+GET /api/attendance/export
+
+👨‍💻 Sample Credentials (Generated Using seed.js)
 Manager
-Email: geetha.lakkireddy@example.com
-Password: Password123
+geetha.lakkireddy@example.com
+Password123
 
 Employees
 bhargav.kamati@example.com / Password123
 praneetha.k@example.com / Password123
 chetan.lakkireddy@example.com / Password123
 
-📸 Screenshots (Add these manually)
+📸 Screenshots
 
-You should upload screenshots of:
+![Login Page](<img width="1920" height="1080" alt="Screenshot 2025-11-30 163141" src="https://github.com/user-attachments/assets/018619a4-d1bb-4e19-99fb-e551dbf5e01c" />
+)
+![Employee Dashboard](<img width="1920" height="1080" alt="Screenshot 2025-11-30 163153" src="https://github.com/user-attachments/assets/71c346f8-94f1-480a-8c9c-5364912b6565" />
+)
+![Manager Dashboard](<img width="1920" height="1080" alt="Screenshot 2025-11-30 163224" src="https://github.com/user-attachments/assets/431f6282-5d7d-4dd7-9d7f-635259f3866c" />
+)
 
-Login Page
+🧩 Why This Project Works
 
-Employee Dashboard
+Clean folder structure
 
-Manager Dashboard
+Predictable state handling
 
-All Attendance Table
+No unnecessary dependencies
 
-Attendance History Calendar
+Code is readable by juniors & seniors
 
-CSV Export
-
-Example section format:
-
-### Login Page
-![Login](./screenshots/login.png)
-
-### Employee Dashboard
-![Dashboard](./screenshots/employee-dashboard.png)
-
-
-Create a screenshots/ folder in your repo and add images.
-
-🧪 API Endpoints
-Auth
-
-POST /api/auth/register
-
-POST /api/auth/login
-
-GET /api/auth/me
-
-Employee Attendance
-
-POST /api/attendance/checkin
-
-POST /api/attendance/checkout
-
-GET /api/attendance/my-history
-
-GET /api/attendance/my-summary
-
-Manager
-
-GET /api/attendance/all
-
-GET /api/attendance/export
-
-✨ What This Project Demonstrates
-
-Clean backend architecture
-
-JWT authentication
-
-Zustand global state
-
-Reusable UI pattern
-
-Simple but effective attendance logic
-
-CSV export generation
-
-Render deployment workflow
-
-This is a lightweight but complete prototype that can be extended into a real HR attendance system.
+Ready to extend (pagination, roles, OTP login, etc.)
 
 📜 License
 
-This project is for educational and evaluation purposes.
+This project is for educational / demo purposes.
