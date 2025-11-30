@@ -1,3 +1,21 @@
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:4e54c8,100:8f94fb&height=120&section=header&text=Employee%20Attendance%20System&fontSize=40&fontColor=ffffff&animation=fadeIn" />
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/State-Zustand-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Auth-JWT-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Deployment-Render-purple?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/chetanlakki/Tap-academy-assignment?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/chetanlakki/Tap-academy-assignment?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/chetanlakki/Tap-academy-assignment?style=flat-square" />
+</p>
+
 Developer Portfolio Style (rich layout, emojis, clean boxes, headings, looks premium)
 
 👉 This one looks GREAT on GitHub.
