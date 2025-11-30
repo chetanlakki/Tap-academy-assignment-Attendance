@@ -1,0 +1,189 @@
+:root{
+  --accent: #d38972;
+  --muted: #e3c6b1;
+  --cream: #fff1e6;
+  --sage: #c6ccb9;
+  --olive: #6f7766;
+  --bg: #fbf7f4;
+  --text: #222;
+  --card-shadow: 0 8px 28px rgba(32,30,20,0.06);
+  --input-border: #efe9e5;
+  --placeholder: #bfb5ad;
+}
+
+/* ---------- reset ---------- */
+* { box-sizing: border-box; }
+html,body,#root { height:100%; }
+body {
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ---------- page container ---------- */
+.container {
+  max-width: 1150px;
+  margin: 28px auto;
+  padding: 22px;
+  min-height: calc(100vh - 60px);
+}
+
+/* ---------- header ---------- */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 18px;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo .mark {
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  background: linear-gradient(135deg,var(--accent),var(--muted));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  font-size:1.05rem;
+}
+
+/* ---------- landing layout ---------- */
+.landing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.landing-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+}
+.auth-card {
+  width: 50%;
+  background: linear-gradient(180deg,#ffffff,#fffaf8);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+.about-card {
+  width: 100%;
+  background: linear-gradient(180deg,#ffffff,#fffaf8);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--card-shadow);
+}
+.auth-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---------- HEADINGS & TYPO ---------- */
+h1 { margin:0 0 6px 0; font-weight:800; font-size:28px; }
+.card h3 { margin: 0 0 10px 0; font-size:1.05rem; color:#222; }
+label { display: block; margin-bottom: 6px; font-size: 0.92rem; color: #444; }
+
+/* ---------- INPUTS: FORCE CONSISTENT STYLE ---------- */
+.auth-card input[type="text"],
+.auth-card input[type="password"],
+.auth-card input[type="email"],
+.auth-card input[type="date"],
+.auth-card textarea,
+.auth-card select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select
+{
+  display: block !important;
+  width: 100% !important;
+  padding: 14px 16px !important;
+  height: 44px !important;
+  line-height: 1.1 !important;
+  font-size: 0.98rem !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--input-border) !important;
+  background: #fff !important;
+  margin-bottom: 12px !important;
+  box-sizing: border-box !important;
+  transition: box-shadow .12s ease, border-color .12s ease !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+.auth-card input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder) !important;
+  opacity: 1 !important;
+}
+.auth-card input:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 8px 20px rgba(211,137,114,0.12) !important;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  background: var(--accent);
+  color: white;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity .12s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow:0 20px 46px rgba(0,0,0,0.09); }
+.btn[disabled] { opacity:0.6; cursor:not-allowed; }
+
+/* ---------- table / dashboard utility ---------- */
+.table { width:100%; border-collapse:collapse; margin-top:12px; font-size:0.95rem; }
+.table th, .table td { padding:10px 12px; border-bottom:1px solid #f3eeea; vertical-align:middle; }
+.table th { text-align:left; color:#666; font-weight:700; background:transparent; }
+.table-wrap { max-height: 420px; overflow: auto; padding-right:6px; }
+
+/* ---------- badges & summary ---------- */
+.badge { display:inline-block; padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.85rem; }
+.badge.present { background:#dff3e9; color:#0a6a3d; }
+.badge.late { background:#fff7d9; color:#8f6b00; }
+.badge.absent { background:#ffe6e6; color:#8f1a1a; }
+.badge.half-day { background:#fff0e9; color:#7a4b00; }
+
+.summary-grid { display:flex; gap:12px; align-items:stretch; flex-wrap:wrap; }
+.summary-card { flex:1 1 140px; min-width:120px; background: linear-gradient(180deg,#fff,#fffaf8); padding:14px; border-radius:12px; text-align:center; box-shadow: 0 8px 20px rgba(0,0,0,0.04); }
+.summary-card h4 { margin:0; font-size:20px; font-weight:800; }
+.summary-card p { margin:6px 0 0 0; color:#666; font-size:0.9rem; }
+
+/* chart container tweaks */
+.chart-wrap { display:flex; align-items:center; gap:12px; justify-content:space-between; }
+
+/* ---------- footer ---------- */
+.app-footer { text-align:center; color:#666; font-size:0.9rem; margin-top:28px; }
+
+/* ---------- responsiveness ---------- */
+@media (max-width: 900px) {
+  .landing-row { flex-direction: column; gap: 14px; }
+  .auth-card { width: 100% !important; }
+  .container { padding:12px; }
+  .table-wrap { max-height: 320px; }
+  .summary-card { min-width:140px; flex-basis: 45%; }
+}
